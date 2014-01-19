@@ -63,7 +63,7 @@ $container = $conn->get_container($container_id);
 bench();
 
 bench("CF: Creating object...");
-$object = $container->create_object($object_id);
+$object = new CF_Object($container, $object_id, false, false);
 bench();
 
 bench("CF: Saving image data...");
