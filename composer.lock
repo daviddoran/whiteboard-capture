@@ -1,0 +1,114 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "8ce63cb72eeed9c51b28d514494875fb",
+    "packages": [
+        {
+            "name": "hipchat/hipchat-php",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hipchat/hipchat-php.git",
+                "reference": "49e62eb4dbb651af2547795efd777e8eb737d755"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hipchat/hipchat-php/zipball/49e62eb4dbb651af2547795efd777e8eb737d755",
+                "reference": "49e62eb4dbb651af2547795efd777e8eb737d755",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HipChat": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HipChat",
+                    "email": "support@hipchat.com",
+                    "homepage": "https://www.hipchat.com",
+                    "role": "Company"
+                }
+            ],
+            "description": "PHP library for HipChat",
+            "homepage": "http://github.com/hipchat/hipchat-php",
+            "keywords": [
+                "hipchat"
+            ],
+            "time": "2012-11-30 16:47:14"
+        },
+        {
+            "name": "omissis/php-cloudfiles",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omissis/php-cloudfiles.git",
+                "reference": "2cda9efe627615ae92c4798a7fdf6c2706011441"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omissis/php-cloudfiles/zipball/2cda9efe627615ae92c4798a7fdf6c2706011441",
+                "reference": "2cda9efe627615ae92c4798a7fdf6c2706011441",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-fileinfo": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "cloudfiles.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Rackspace",
+                    "homepage": "http://www.rackspacecloud.com"
+                },
+                {
+                    "name": "Community contributors",
+                    "homepage": "https://github.com/rackspace/php-cloudfiles/graphs/contributors"
+                }
+            ],
+            "description": "PHP language bindings for Cloud Files API",
+            "homepage": "https://github.com/omissis/php-cloudfiles",
+            "keywords": [
+                "Cloud Files",
+                "RSCF",
+                "php",
+                "rackspace"
+            ],
+            "time": "2013-02-13 09:00:13"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "omissis/php-cloudfiles": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}

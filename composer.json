@@ -1,0 +1,15 @@
+{
+    "name": "daviddoran/whiteboard-capture",
+    "description": "Capture what's on a whiteboard, save to CloudFiles, post into HipChat.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Doran",
+            "email": "david@daviddoran.com"
+        }
+    ],
+    "require": {
+        "omissis/php-cloudfiles": "dev-master",
+        "hipchat/hipchat-php": ">=1.0.0"
+    }
+}
