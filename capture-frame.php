@@ -5,8 +5,10 @@
  * Captures a frame from a webcam or other video device.
  */
 
+require "utilities.php";
+
 $start = microtime(true);
-fwrite(STDERR, "Capturing image... ");
+bench("Capture: Capturing image...");
 
 $output_filename = tempnam(sys_get_temp_dir(), "whiteboard");
 
@@ -26,8 +28,8 @@ $command = implode(" ", $arguments);
 exec($command, $output, $return_code);
 
 if (0 === $return_code and !preg_grep("/error/i", $output)) {
-    $elapsed = microtime(true) - $start;
-    fwrite(STDERR, sprintf("Done. Took %.2f seconds.\n", $elapsed));
+    bench();
+    stderrln("Capture: Image stored at $output_filename");
     echo $output_filename, "\n";
     exit(0);
 } else {

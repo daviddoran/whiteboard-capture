@@ -6,30 +6,9 @@
  */
 
 require "vendor/autoload.php";
+require "utilities.php";
 
-function stderr($message) {
-    fwrite(STDERR, $message);
-}
-
-function stderrln($message) {
-    fwrite(STDERR, $message . PHP_EOL);
-}
-
-function bench($message = null) {
-    static $start = null;
-    if (func_num_args() === 0) {
-        stderrln(sprintf("Done. Took %.2f seconds.", microtime(true) - $start));
-        return;
-    }
-    $start = microtime(true);
-    stderr("$message ");
-}
-
-if ($argc > 1 and ('--' !== $argv[1])) {
-    $input_filename = $argv[1];
-} else {
-    $input_filename = rtrim(fgets(STDIN));
-}
+$input_filename = get_single_argument();
 
 if (!$input_filename) {
     echo "You must provide a filename as the first argument or through STDIN.\n";
@@ -49,7 +28,7 @@ $username = $config["cloudfiles"]["username"];
 $apikey = $config["cloudfiles"]["api_key"];
 $container_id = $config["cloudfiles"]["container"];
 
-bench("Authenticating to CloudFiles...");
+bench("CF: Authenticating to CloudFiles...");
 $auth = new CF_Authentication($username, $apikey);
 $auth->authenticate();
 bench();

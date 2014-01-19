@@ -8,12 +8,9 @@
 use HipChat\HipChat;
 
 require "vendor/autoload.php";
+require "utilities.php";
 
-if ($argc > 1 and ("--" !== $argv[1])) {
-    $image_url = $argv[1];
-} else {
-    $image_url = rtrim(fgets(STDIN));
-}
+$image_url = get_single_argument();
 
 $defaults = array(
     "from"   => "Whiteboard",
@@ -29,6 +26,7 @@ $room_id = $config["hipchat"]["room"];
 
 $hc = new HipChat($token);
 
+bench("HipChat: Messaging HipChat room...");
 $success = $hc->message_room(
     $room_id,
     $config["hipchat"]["from"],
@@ -37,6 +35,7 @@ $success = $hc->message_room(
     $config["hipchat"]["color"],
     $config["hipchat"]["format"]
 );
+bench();
 
 if (!$success) {
     echo "Unknown error posting image to HipChat room.\n";
