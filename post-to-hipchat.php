@@ -15,21 +15,27 @@ if ($argc > 1 and ("--" !== $argv[1])) {
     $image_url = rtrim(fgets(STDIN));
 }
 
+$defaults = array(
+    "from"   => "Whiteboard",
+    "notify" => false,
+    "color"  => HipChat::COLOR_YELLOW,
+    "format" => HipChat::FORMAT_TEXT
+);
 $config = require "config.php";
+$config["hipchat"] = $config["hipchat"] + $defaults;
 
 $token = $config["hipchat"]["token"];
 $room_id = $config["hipchat"]["room"];
-$from = !empty($config["hipchat"]["from"]) ? $config["hipchat"]["from"] : "Whiteboard";
 
 $hc = new HipChat($token);
 
 $success = $hc->message_room(
     $room_id,
-    $from,
+    $config["hipchat"]["from"],
     $image_url,
-    $notify = false,
-    $color = HipChat::COLOR_YELLOW,
-    HipChat::FORMAT_TEXT
+    $config["hipchat"]["notify"],
+    $config["hipchat"]["color"],
+    $config["hipchat"]["format"]
 );
 
 if (!$success) {
