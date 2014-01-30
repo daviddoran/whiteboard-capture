@@ -5,6 +5,13 @@ using a webcam, fswebcam, Rackspace CloudFiles and HipChat.
 
 Each program has a small job:
 
+## button-listener.py
+
+Waits for a GPIO pin to be triggered (voltage goes high or low), for example
+by a button or a sensor.
+
+When triggered, the script `pipeline.sh` will be run.
+
 ## capture-frame.php
 
 Captures a single frame from the webcam using `fswebcam`, saves it to file
