@@ -5,8 +5,6 @@ using a webcam, fswebcam, Rackspace CloudFiles and HipChat.
 
 Each program has a small job:
 
-./capture-frame.php | ./save-to-cloudfiles.php | ./post-to-hipchat.php
-
 ## capture-frame.php
 
 Captures a single frame from the webcam using `fswebcam`, saves it to file
