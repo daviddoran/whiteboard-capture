@@ -6,6 +6,17 @@
 
 $config = array();
 
+/*
+//Add any custom fswebcam arguments here
+$config['fswebcam'] = array();
+$fswebcam = & $config['fswebcam'];
+//For example, the code below flips in both directions.
+$fswebcam['arguments'] = array(
+    '--flip v',
+    '--flip h',
+);
+*/
+
 $config['cloudfiles'] = array();
 $cloudfiles = & $config['cloudfiles'];
 $cloudfiles['username'] = 'YOUR CLOUDFILES USERNAME';

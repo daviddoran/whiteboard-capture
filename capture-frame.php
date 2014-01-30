@@ -19,8 +19,18 @@ $arguments = array(
     "-S 2",           //Skip 2 frames
     "--jpeg 85",      //JPEG quality
     "--no-banner",    //Don't overlay the capture time
-    escapeshellarg($output_filename),
-    "2>&1"
+);
+
+$config = require "config.php";
+$config_arguments = (isset($config["fswebcam"]["arguments"]) ? $config["fswebcam"]["arguments"] : array());
+
+$arguments = array_merge(
+    $arguments,
+    $config_arguments,
+    array(
+        escapeshellarg($output_filename),
+        "2>&1"
+    )
 );
 
 $command = implode(" ", $arguments);
